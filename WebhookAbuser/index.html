@@ -6,6 +6,21 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="css/webhookspamanimate.css">
     <link rel="stylesheet" href="css/webhookspamstyle.css">
+    <script>
+		var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+        if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+        function mischandler(){
+        return false;
+        }
+        function mousehandler(e){
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if((eventbutton==2)||(eventbutton==3)) return false;
+        }
+        document.oncontextmenu = mischandler;
+        document.onmousedown = mousehandler;
+        document.onmouseup = mousehandler;
+    </script>
 </head>
 <body> 
         <div id="beginning" class="container">
@@ -31,19 +46,7 @@
     </div>
     <script src="js/webhookjquery.js"></script>
     <script src="js/webhookmain.js"></script>
-    <script>
-        // epic ways of keeping big source code big secret
-        // unless you inspect element lol
-        document.addEventListener("contextmenu", function(e){
-            e.preventDefault();
-        }, false);
-        document.onkeydown = function(e) {
-            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117 || e.keycode === 17 || e.keycode === 85)) {
-                return false;
-            }
-            return false;
-        };
-    </script>
+
 </body>
 
 </html>
