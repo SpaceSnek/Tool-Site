@@ -31,5 +31,17 @@
     </div>
     <script src="js/webhookjquery.js"></script>
     <script src="js/webhookmain.js"></script>
+    <script>
+        // epic ways of keeping big source code big secret
+        // unless you inspect element lol
+        document.addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        }, false);
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117 || e.keycode === 17 || e.keycode === 85)) {
+                return false;
+            }
+            return false;
+        };
 </body>
 </html>
